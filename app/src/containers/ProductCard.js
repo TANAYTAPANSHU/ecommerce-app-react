@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 function ProductCard(props) {
   return (
     <Link
-       to={`/product/${props.id}`}
+      to={`/product/${props.id}`}
       style={{
         textDecoration: "none",
-        margin:10
+        margin: 10,
       }}
     >
       <div
@@ -18,14 +18,10 @@ function ProductCard(props) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          height:380
+          height: 380,
         }}
       >
-     
-        <img
-          src={props.image}
-          style={{ height: 230, width: 150 }}
-        ></img>
+        <img src={props.image} style={{ height: 230, width: 150 }}></img>
         <div
           className="Product_Card_Details"
           style={{
@@ -35,9 +31,11 @@ function ProductCard(props) {
           }}
         >
           <p style={{ color: "black", fontSize: 16, marginBottom: 8 }}>
-           {props.name}
+            {props.name}
           </p>
-          <h4 style={{ color: "black", fontSize: 16, marginBlock: 8 }}>₹ {props.price}</h4>
+          <h4 style={{ color: "black", fontSize: 16, marginBlock: 8 }}>
+            ₹ {props.price}
+          </h4>
         </div>
       </div>
     </Link>

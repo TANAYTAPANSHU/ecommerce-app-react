@@ -2,30 +2,32 @@ import React from "react";
 import { LoginContext } from "./UserContext";
 
 function Login() {
-    let {user,login,logout} = React.useContext(LoginContext);
+  let { login } = React.useContext(LoginContext);
 
-    const [name,setName] = React.useState()
-    const [number,setNumber] = React.useState()
+  const [name, setName] = React.useState();
+  const [number, setNumber] = React.useState();
+  const inputNameRef = React.useRef(null);
+  const inputNumberRef = React.useRef(null);
 
-  function userLogin()
-  {
-    if(name && number)
-    {
+  function handleClickName() {
+    inputNameRef.current.focus();
+  }
+
+  function handleClickNumber() {
+    console.log(inputNumberRef);
+    inputNumberRef.current.focus();
+  }
+
+  function userLogin() {
+    if (name && number) {
       login(name);
+    } else if (!name) {
+      alert("Enter your name");
+    } else {
+      alert("Enter your number");
     }
-    else if(!name) {
-      alert("Enter your name")
-  }
-  else
-  {
-       alert("Enter your number")
-  }
- 
-
-
   }
 
-    
   return (
     <div
       className="Login"
@@ -83,16 +85,16 @@ function Login() {
             </label>
 
             <input
-              onChange={e => setName(e.target.value)  }
+              ref={inputNameRef}
+              onChange={(e) => setName(e.target.value)}
+              onClick={handleClickName}
               placeholder="Enter your name"
               style={{
                 display: "block",
                 width: "100%",
-                marginTop:10,
+                marginTop: 10,
                 padding: 10,
                 borderRadius: 4,
-                border: "none",
-                outline: "none",
                 background: "white",
                 boxSizing: "border-box",
               }}
@@ -113,38 +115,38 @@ function Login() {
             </label>
             <input
               type="tel"
-              onChange={e => setNumber(e.target.value)  }  
+              ref={inputNumberRef}
+              onChange={(e) => setNumber(e.target.value)}
+              onClick={handleClickNumber}
               placeholder="Enter your phone number"
               style={{
                 display: "block",
-                  marginTop:10,
+                marginTop: 10,
                 width: "100%",
                 padding: 10,
                 marginBottom: 10,
                 borderRadius: 4,
-                border: "none",
-                outline: "none",
                 boxSizing: "border-box",
               }}
             />
-          
-            <button type="submit"
-     
-            onClick={userLogin}
-             style={{
-                marginTop: '20px',
-    background: '#fb641b',
-    color:'white',
-    height: '40px',
-    marginLeft:80,
-    paddingInline:25,
-    cursor: 'pointer',
-    fontWeight: '900',
-    width:'50%'
 
-    
-    
-            }}>LOGIN</button>
+            <button
+              type="submit"
+              onClick={userLogin}
+              style={{
+                marginTop: "20px",
+                background: "#fb641b",
+                color: "white",
+                height: "40px",
+                marginLeft: 80,
+                paddingInline: 25,
+                cursor: "pointer",
+                fontWeight: "900",
+                width: "50%",
+              }}
+            >
+              LOGIN
+            </button>
           </div>
         </div>
       </div>

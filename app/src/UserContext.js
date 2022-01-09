@@ -1,28 +1,30 @@
-import React from 'react'
+import React from "react";
 
 export const LoginContext = React.createContext();
 
-export const LoginProvider = ({children}) =>{
-const [user,setUser] = React.useState({name:'',auth:false});
+//custom hooks to update the title
 
+const useDocumentUser = (name) => {
+  React.useEffect(() => {
+    document.title = name ? `Welcome ${name}` : "Login to Ekart";
+  }, [name]);
+};
 
-const login = (name) =>{
-    setUser(() => ({name:name ,auth:true}) )
-}
+export const LoginProvider = ({ children }) => {
+  const [user, setUser] = React.useState({ name: "", auth: false });
+  useDocumentUser(user.name);
 
-const logout = () =>{
-    setUser(() => ({name:'' ,auth:false}) )
-}
+  const login = (name) => {
+    setUser(() => ({ name: name, auth: true }));
+  };
 
+  const logout = () => {
+    setUser(() => ({ name: "", auth: false }));
+  };
 
-return(
-    <LoginContext.Provider value={{user,login,logout}}>
-        {children}
+  return (
+    <LoginContext.Provider value={{ user, login, logout }}>
+      {children}
     </LoginContext.Provider>
-)
-
-
-
-
-
-}
+  );
+};
