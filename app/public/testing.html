@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Product Details Page</title>
+    <!-- CSS Style for the elements -->
+    <style>
+        .header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background: #2874f0;
+            color: white;
+            font-size: 30px;
+            padding-left: 50px;
+        }
+        
+        .main {
+            padding-top: 2%;
+            display: flex;
+            margin-bottom: 10px;
+            background: #fff;
+            margin-left: 10px;
+            padding-bottom: 40px;
+            margin-right: 10px;
+            justify-content: space-between;
+        }
+        
+        .main_left {
+            display: flex;
+            padding: 25px;
+            flex: 2;
+            flex-direction: column;
+        }
+        
+        .product_image {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border-width: 1px;
+            border-color: black;
+            border-style: solid;
+        }
+        
+        .main_buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        
+        button.add_to_cart {
+            width: 49%;
+            height: 4em;
+            background: #f49f3f;
+            border-width: 0px;
+            color: white;
+            font-weight: 900;
+        }
+        
+        button.buy_now {
+            height: 4em;
+            width: 49%;
+            background: #ef6336;
+            border-width: 0px;
+            color: white;
+            font-weight: 900;
+        }
+        
+        .main_product_details {
+            flex: 4;
+            padding: 10px;
+            padding-left: 3em;
+        }
+        
+        div.product_name>h3 {
+            font-size: 22px;
+        }
+        
+        div.product_name>p {
+            color: #2874f0;
+            font-weight: 700;
+        }
+        
+        div.price_detail>h2 {
+            font-size: 2.0em;
+            margin-top: 1px;
+        }
+        
+        div.available_offers>h3 {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        
+        div.available_offers>ul {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        div.available_offers>h5 {
+            color: #2874f0;
+            font-size: 18px;
+        }
+        
+        div.product_highlights {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        div.product_highlights>h4 {
+            color: #818181
+        }
+        
+        div.product_highlights>ul>li {
+            margin-bottom: 0.5em;
+        }
+        
+        div.product_highlights.description>p {
+            margin-left: 25px;
+            font-size: 16px;
+            width: 80%;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+
+<body style="margin: 0px;background-color:  #dcdbe1">
+
+    <!-- Header of the application -->
+
+    <div class="header">
+
+        <img src="https://firebasestorage.googleapis.com/v0/b/native-collegebeats.appspot.com/o/Eshop.png?alt=media&token=5f6c3456-a59d-4a8f-918e-e92ab96674ed" alt="The head and torso of a dinosaur skeleton;
+             it has a large head with long sharp teeth" width="200" height="100">
+    </div>
+
+
+
+    <!-- Main part of the Product Details Page -->
+
+    <div class="main">
+
+        <!-- Main Left container contains the image of the product and two buttons add to cart and buy now.  -->
+        <div class="main_left">
+            <div class="product_image">
+                <img src="https://firebasestorage.googleapis.com/v0/b/native-collegebeats.appspot.com/o/galaxyMobile.jpeg?alt=media&token=cf6e4921-f245-4354-8ee1-edfb03715b87" alt="The head and torso of a dinosaur skeleton;
+                     it has a large head with long sharp teeth" width="170" height="400">
+            </div>
+            <!-- Main Buttons container contains two buttons Add to cart and Buy Now-->
+            <div class="main_buttons">
+                <button class="add_to_cart">
+                    Add to Cart
+                </button>
+
+                <button class="buy_now">
+                    Buy Now
+                </button>
+            </div>
+        </div>
+
+
+        <!-- Container main_product_details contains all details about the product -->
+
+        <div class="main_product_details">
+
+            <!-- Container For Product Name -->
+            <div class="product_name">
+                <h3> SAMSUNG Galaxy M52 5G (Icy Blue, 128 GB) (8 GB RAM)</h3>
+
+                <p>Be the first to Review this product</p>
+            </div>
+            <!-- Container For Product Details -->
+
+            <div class="price_detail">
+                <h2> ₹29,998</h2>
+            </div>
+
+            <!-- Container For Offers -->
+            <div class="available_offers">
+                <h3>Available offers</h3>
+
+                <ul>
+                    <li>Bank Offer 5% Unlimited Cashback on Flipkart Axis Bank Credit Card</li>
+                    <li>Bank Offer 15% Instant discount on first Pay Later order of ₹500 and above</li>
+                </ul>
+
+                <h5>1 Year Warranty Provided by the Manufacturer from Date of Purchase</h5>
+            </div>
+
+            <!-- Container For Highlights about the product -->
+            <div class="product_highlights">
+                <h4>Highlights</h4>
+
+
+                <ul>
+                    <li>8 GB RAM | 128 GB ROM | Expandable Upto 1 TB</li>
+                    <li>17.02 cm (6.7 inch) Full HD+ Display</li>
+                    <li>64MP + 12MP + 5MP | 32MP Front Camera</li>
+                    <li>5000 mAh Battery</li>
+                    <li>Qualcomm SM7325 Snapdragon Processor</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Container For all the description about the product -->
+            <div class="product_highlights description">
+                <h4>Description</h4>
+
+
+                <p>
+
+                    Samsung Galaxy M52 5G mobile comes with a 6.70-inch touchscreen display with a resolution of 1080x2400 pixels and an aspect ratio of 20:9. Samsung Galaxy M52 5G is powered by a 1.8GHz octa-core Qualcomm Snapdragon 778G processor. It comes with 6GB of
+                    RAM. The Samsung Galaxy M52 5G runs Android 11 and is powered by a 5000mAh battery. As far as the cameras are concerned, the Samsung Galaxy M52 5G on the rear packs a triple camera setup featuring a 64-megapixel primary camera. It
+                    has a single front camera setup for selfies, featuring a 32-megapixel sensor. The Samsung Galaxy M52 5G runs One UI 3.1 is based on Android 11 and packs 128GB of inbuilt storage that can be expanded via microSD card upto 1TB.
+                </p>
+
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+    </div>
+</body>
+
+</html>

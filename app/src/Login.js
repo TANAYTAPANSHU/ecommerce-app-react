@@ -4,12 +4,25 @@ import { LoginContext } from "./UserContext";
 function Login() {
     let {user,login,logout} = React.useContext(LoginContext);
 
-    const [name,setName] = React.useState('')
+    const [name,setName] = React.useState()
+    const [number,setNumber] = React.useState()
 
   function userLogin()
   {
-login(name);
-console.log(user,"you are welcome" )
+    if(name && number)
+    {
+      login(name);
+    }
+    else if(!name) {
+      alert("Enter your name")
+  }
+  else
+  {
+       alert("Enter your number")
+  }
+ 
+
+
   }
 
     
@@ -96,10 +109,11 @@ console.log(user,"you are welcome" )
                 boxSizing: "border-box",
               }}
             >
-              PASSWORD
+              Phone Number
             </label>
             <input
               type="tel"
+              onChange={e => setNumber(e.target.value)  }  
               placeholder="Enter your phone number"
               style={{
                 display: "block",
@@ -113,17 +127,22 @@ console.log(user,"you are welcome" )
                 boxSizing: "border-box",
               }}
             />
+          
             <button type="submit"
+     
             onClick={userLogin}
              style={{
                 marginTop: '20px',
-    background: '#1DA1F2',
+    background: '#fb641b',
+    color:'white',
     height: '40px',
-    borderRadius: '20px',
+    marginLeft:80,
+    paddingInline:25,
     cursor: 'pointer',
     fontWeight: '900',
-    boxShadow: '6px 6px 6px #cbced1, -6px -6px 6px white',
-    marginLeft:100
+    width:'50%'
+
+    
     
             }}>LOGIN</button>
           </div>
