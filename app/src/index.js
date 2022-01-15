@@ -8,9 +8,14 @@ import {BrowserRouter as  Router, Routes, Route} from "react-router-dom"
 
 ReactDOM.render(
   <React.StrictMode>
+  
   <LoginProvider>
-    <App />
+ 
+        <App />
+
+
     </LoginProvider>
+
   </React.StrictMode>,
   document.getElementById('root')
 );

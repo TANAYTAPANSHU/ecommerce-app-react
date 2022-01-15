@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import productsData from "../db/store.json";
+
 function ProductListing() {
   return (
     <div
@@ -23,7 +24,7 @@ function ProductListing() {
             id={product.id}
           />
         );
-      })}
+      })}{" "}
     </div>
   );
 }

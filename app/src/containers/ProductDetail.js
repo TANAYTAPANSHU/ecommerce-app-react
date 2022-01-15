@@ -1,13 +1,30 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import productsData from "../db/store.json";
+import { LoginContext } from "../UserContext";
+import { useNavigate } from "react-router-dom";
+
 function ProductDetail() {
   const { productId } = useParams();
+  const navigate = useNavigate();
   let product = productsData.find((product) => product.id == productId);
-  console.log(product);
+  const { user, login, logout, products, dispatch } =
+    React.useContext(LoginContext);
+
+  function addProduct() {
+    const action = {
+      type: "ADD_PRODUCT",
+      payload: product,
+    };
+
+    dispatch(action);
+    navigate(`/cart/true`);
+  }
+  console.log(product, "This is a product" );
+
   return (
     <div
-      class="ProductDetail"
+      className="ProductDetail"
       style={{
         paddingTop: "2%",
         display: "flex",
@@ -20,7 +37,7 @@ function ProductDetail() {
       }}
     >
       <div
-        class="ProductDetail_left"
+        className="ProductDetail_left"
         style={{
           display: "flex",
           padding: "25px",
@@ -29,7 +46,7 @@ function ProductDetail() {
         }}
       >
         <div
-          class="product_image"
+          className="product_image"
           style={{
             paddingTop: "10px",
             paddingBottom: "20px",
@@ -44,10 +61,9 @@ function ProductDetail() {
             width="170"
             height="350"
           />
-        </div>
-
+        </div>{" "}
         <div
-          class="main_buttons"
+          className="main_buttons"
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -55,7 +71,8 @@ function ProductDetail() {
           }}
         >
           <button
-            class="add_to_cart"
+            className="add_to_cart"
+            onClick={addProduct}
             style={{
               width: "49%",
               height: "4em",
@@ -65,11 +82,10 @@ function ProductDetail() {
               fontWeight: "900",
             }}
           >
-            Add to Cart
-          </button>
-
+            Add to Cart{" "}
+          </button>{" "}
           <button
-            class="buy_now"
+            className="buy_now"
             style={{
               height: "4em",
               width: "49%",
@@ -79,35 +95,28 @@ function ProductDetail() {
               fontWeight: "900",
             }}
           >
-            Buy Now
-          </button>
-        </div>
-      </div>
-
+            Buy Now{" "}
+          </button>{" "}
+        </div>{" "}
+      </div>{" "}
       <div
-        class="main_product_details"
+        className="main_product_details"
         style={{
           flex: 4,
           padding: "10px",
           paddingLeft: "3em",
         }}
       >
-        <div class="product_name">
-          <h3> {product.title}</h3>
-
-          <p>{product.category}</p>
-        </div>
-
-        <div class="price_detail">
-          <h2> ₹{product.price}</h2>
-        </div>
-
+        <div className="product_name">
+          <h3> {product.title} </h3> <p> {product.category} </p>{" "}
+        </div>{" "}
+        <div className="price_detail">
+          <h2> ₹{product.price} </h2>{" "}
+        </div>{" "}
         <div class="product_description">
-          <h4>Description</h4>
-
-          <p>{product.description}</p>
-        </div>
-      </div>
+          <h4> Description </h4> <p> {product.description} </p>{" "}
+        </div>{" "}
+      </div>{" "}
     </div>
   );
 }
