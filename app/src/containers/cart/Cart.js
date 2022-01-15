@@ -16,7 +16,7 @@ function Cart() {
            
         }  )}
            
-            <p>{express}</p>
+            {/* <p>{express}</p> */}
         </div>
     )
 }

@@ -85,6 +85,7 @@ function ProductDetail() {
             Add to Cart{" "}
           </button>{" "}
           <button
+             onClick={addProduct}
             className="buy_now"
             style={{
               height: "4em",
