@@ -14,7 +14,6 @@ function Login() {
   }
 
   function handleClickNumber() {
-    console.log(inputNumberRef);
     inputNumberRef.current.focus();
   }
 

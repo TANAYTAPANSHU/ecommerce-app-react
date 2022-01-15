@@ -6,12 +6,15 @@ import React from "react";
 import Login from "./Login";
 import ProductListing from "./containers/ProductListing";
 import ProductDetail from "./containers/ProductDetail";
+import Cart from "./containers/cart/Cart";
 
 function App() {
-  const { user, login, logout } = React.useContext(LoginContext);
+  const { user, login, logout,products } = React.useContext(LoginContext);
   function userLogout() {
-    logout();
+   window.location.href='/'
   }
+
+ console.log(products,"Products in Cart")
 
   if (!user.auth) {
     return (
@@ -69,6 +72,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ProductListing />} />
             <Route path="product/:productId" element={<ProductDetail />} />
+            <Route path="cart/:express"  element={<Cart />} />
           </Routes>
         </BrowserRouter>
       </>

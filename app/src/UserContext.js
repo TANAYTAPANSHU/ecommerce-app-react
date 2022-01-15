@@ -1,4 +1,6 @@
 import React from "react";
+ import {Provider} from 'react-redux'
+import cartReducer from "./cartReducers";
 
 export const LoginContext = React.createContext();
 
@@ -12,6 +14,8 @@ const useDocumentUser = (name) => {
 
 export const LoginProvider = ({ children }) => {
   const [user, setUser] = React.useState({ name: "", auth: false });
+  const cartProducts = []; //cart Product state
+  const [products,dispatch] = React.useReducer(cartReducer, cartProducts)
   useDocumentUser(user.name);
 
   const login = (name) => {
@@ -23,8 +27,13 @@ export const LoginProvider = ({ children }) => {
   };
 
   return (
-    <LoginContext.Provider value={{ user, login, logout }}>
+
+    <LoginContext.Provider value={{ user, login, logout,products, dispatch }}>
+    
+    
       {children}
+ 
+      
     </LoginContext.Provider>
   );
 };
